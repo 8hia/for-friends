@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>yay!</title>
+  
+  <audio id="bg-music" src="YAY.mp3"></audio>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background: linear-gradient(to right, #ffc1cc, #ffdde1);
+  padding: 50px 20px;
+  min-height: 100vh;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+   
+    h1 {
+  font-family: 'Quicksand', sans-serif;
+  color: #ff69b4;
+  font-size: 2.5em;
+  text-align: center;
+  margin-top: 50px;
+  text-shadow: 1px 1px 2px #ffc0cb;
+  animation: pop 1s ease-in-out;
+  margin-bottom: 30px;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes pop {
+  0% { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+    .button-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    button {
+      font-size: 1.2em;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .yes {
+      background-color: #ff69b4;
+      color: white;
+    }
+
+    .no {
+      background-color: #fff;
+      color: #ff69b4;
+      border: 2px solid #ff69b4;
+    }
+    .dear {
+  font-family: 'Caveat', cursive;
+  font-size: 1.8em;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #ff4d88;
+}
+
+#letter {
+  display: none;
+  margin: 30px auto;
+  padding: 20px 30px;
+  background: repeating-linear-gradient(
+    white,
+    white 24px,
+    #ffd1dc 25px,
+    white 26px
+  );
+  background-blend-mode: multiply;
+  background-size: cover;
+  color: #ff69b4;
+  border-radius: 10px;
+  font-size: 1.1em;
+  text-align: left;
+  white-space: pre-wrap;
+  max-width: 90%;
+  width: 500px;
+  line-height: 30px;
+  font-family: 'Patrick Hand', cursive;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  border: 1px solid #ffb6c1;
+}
+    @keyframes flash {
+      0% {opacity: 1;}
+      50% {opacity: 0.3;}
+      100% {opacity: 1;}
+    }
+    .flashing {
+        animation: flash 1s infinite;
+    }
+
+    @media (max-width: 600px) {
+  h1 { font-size: 2em; }
+  button { font-size: 1em; padding: 10px 20px; }
+  #letter {
+    font-size: 1em;
+    line-height: 28px;
+    padding: 15px 20px;
+  }
+}
+    .heart {
+  position: absolute;
+  color: #ff69b4;
+  font-size: 2em;
+  animation: float 5s infinite ease-in-out;
+  opacity: 0.8;
+}
+.wrapper {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(20deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+  </style>
+</head>
+<body>
+    <div class="wrapper">
+
+  <h1>open?</h1>
+
+  <div class="button-container">
+    <button class="yes" onclick="showLetter()">yes ! <3</button>
+    <button class="no" onclick="makeNoBigger(this)">no ˙◠˙</3</button>
+  </div>
+
+  <div id="letter">
+<div class="dear">Dearest Jade,</div>
+<p>HI TE! OMGOMGOMGOMG HAPPY 18TH ٩(^ᗜ^ )و ´
+  <p>Wowee. To think that we met when we were 6 or 7 years old. Can you believe it? It's been over a decade since we first met!!!! From the moment we became friends, life has been so much brighter and more fun. We've shared countless memories, laughter, and I wouldn't trade any of it for the world.</p>
+  You've seen all sides of me—the good, the bad, and everything in between—and yet, you've stayed. We keep evolving together frfr, and I couldn't ask for a better friend to grow with.
+  Now that you're LEGAL (!!!), this is just the beginning of an exciting new chapter, and I can't wait to see you shine even brighter.
+  Even though I can't be with you in person right now, I'm celebrating you from afar. I'm hoping we can celeb all our bdays w Lianne next year ^^—imagine how fun that would beeeeee
+  Thank you for always being there for me, for understanding me, and for being the incredible person that you are. Here's to many more years of friendship, adventures, and unforgettable moments together!
+    Hanggang sa dulo, sister! I love you so much, and I'm so grateful to have you in my life. Happy birthday again, and may this year bring you all the happiness, success, and love you deserve! (づ｡◕‿‿◕｡)づ
+  </p>
+
+    — Alicia maganda (˵ •̀ ᴗ - ˵ ) ✧
+</p>
+  </div>
+
+  <script>
+    let noSize = 1;
+    let yesSize = 1;
+  
+    function makeNoBigger(button) {
+      noSize -= 0.1; // shrink it
+      if (noSize < 0.5) noSize = 0.5; // don't shrink to nothing!
+      button.style.transform = `scale(${noSize})`;
+  
+      yesSize += 0.2; // grow the YES
+      document.querySelector('.yes').style.transform = `scale(${yesSize})`;
+    }
+  
+    
+    function showLetter() {
+  document.querySelector('h1').style.display = 'none';
+  document.querySelector('.button-container').style.display = 'none';
+  document.getElementById('letter').style.display = 'block';
+  letter.classList.add('flashing');
+  setTimeout(() => {
+    letter.classList.remove('flashing');
+  }, 2000);
+  document.getElementById('bg-music').play();
+  showConfetti(); 
+}
+function showConfetti() {
+  const duration = 1 * 1000;
+  const animationEnd = Date.now() + duration;
+  const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 1000 };
+
+  function randomInRange(min, max) {
+    return Math.random() * (max - min) + min;
+  }
+
+  const interval = setInterval(function () {
+    const timeLeft = animationEnd - Date.now();
+
+    if (timeLeft <= 0) {
+      return clearInterval(interval);
+    }
+
+    confetti(Object.assign({}, defaults, {
+      particleCount: 50,
+      origin: {
+        x: randomInRange(0.1, 0.9),
+        y: Math.random() - 0.2
+      }
+    }));
+  }, 250);
+}
+  </script>
+        <!-- Floating hearts -->
+<script>
+    for (let i = 0; i < 20; i++) {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.textContent = "♡";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.top = Math.random() * 100 + "vh";
+      heart.style.animationDuration = 3 + Math.random() * 4 + "s";
+      document.body.appendChild(heart);
+    }
+  </script>
+  </div>
+</body>
+</html>
